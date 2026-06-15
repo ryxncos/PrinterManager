@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PrintManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4495f8077e1de9efc819f42964f00f8cfdaaafea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aca1fa7a04ab66b9bb5e840399fcb58cc568ced3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PrintManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PrintManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

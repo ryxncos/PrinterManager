@@ -215,36 +215,40 @@ namespace PrintManager.Forms
             };
 
             // Cabeçalho colorido
-            var header = new Panel
+            var header = new TableLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 28,
+                Height = 32,
                 BackColor = Color.FromArgb(230, 241, 251),
-                Padding = new Padding(8, 0, 8, 0)
+                ColumnCount = 2,
+                RowCount = 1,
+                Padding = new Padding(8, 4, 10, 4)
             };
+            header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
+            header.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
             var lblTitulo = new Label
             {
                 Text = titulo,
-                Dock = DockStyle.Left,
+                Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleLeft,
                 ForeColor = Color.FromArgb(12, 68, 124),
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
-                AutoSize = false,
-                Width = 200
+                AutoEllipsis = true
             };
 
             chkSemData = new CheckBox
             {
                 Text = "Sem registro",
-                Dock = DockStyle.Right,
-                TextAlign = ContentAlignment.MiddleRight,
+                AutoSize = true,
+                Anchor = AnchorStyles.None,
                 ForeColor = Color.FromArgb(24, 95, 165),
                 Font = new Font("Segoe UI", 8.5f),
-                AutoSize = true
+                Margin = new Padding(8, 0, 0, 0)
             };
 
-            header.Controls.Add(lblTitulo);
-            header.Controls.Add(chkSemData);
+            header.Controls.Add(lblTitulo, 0, 0);
+            header.Controls.Add(chkSemData, 1, 0);
 
             // Corpo
             var body = new TableLayoutPanel
