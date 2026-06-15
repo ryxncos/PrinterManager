@@ -52,7 +52,7 @@ namespace PrintManager.Forms
                 Dock = DockStyle.Top,
                 Height = 60,
                 Padding = new Padding(8, 8, 8, 0),
-                BackColor = SystemColors.Control
+                //BackColor = SystemColors.Control
             };
 
             txtBusca = new TextBox
@@ -121,13 +121,15 @@ namespace PrintManager.Forms
                 BackgroundColor = SystemColors.Window,
                 GridColor = Color.FromArgb(220, 220, 220),
                 Font = new Font("Segoe UI", 9.5f),
-                ColumnHeadersHeight = 32,
+                ColumnHeadersHeight = 45,
                 RowTemplate = { Height = 36 }
             };
 
             grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
-            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
-            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(80, 80, 80);
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(215, 215, 215);
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(40, 40, 40);
+            grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(215, 215, 215);
+            grid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
             grid.EnableHeadersVisualStyles = false;
 
             ConfigurarColunas();
@@ -191,7 +193,7 @@ namespace PrintManager.Forms
             {
                 Name = "colIP",
                 HeaderText = "Endereço IP",
-                Width = 120,
+                Width = 150,
                 ReadOnly = true
             });
 
@@ -225,9 +227,9 @@ namespace PrintManager.Forms
             var colPing = new DataGridViewButtonColumn
             {
                 Name = "colPing",
-                HeaderText = "",
-                Width = 36,
-                Text = "⇄",
+                HeaderText = "Ping",
+                Width = 100,
+                Text = "⇅",
                 UseColumnTextForButtonValue = true,
                 FlatStyle = FlatStyle.Flat
             };
@@ -237,8 +239,8 @@ namespace PrintManager.Forms
             var colEditar = new DataGridViewButtonColumn
             {
                 Name = "colEditar",
-                HeaderText = "",
-                Width = 36,
+                HeaderText = "Editar",
+                Width = 100,
                 Text = "✎",
                 UseColumnTextForButtonValue = true,
                 FlatStyle = FlatStyle.Flat
@@ -249,8 +251,8 @@ namespace PrintManager.Forms
             var colExcluir = new DataGridViewButtonColumn
             {
                 Name = "colExcluir",
-                HeaderText = "",
-                Width = 36,
+                HeaderText = "Excluir",
+                Width = 100,
                 Text = "✕",
                 UseColumnTextForButtonValue = true,
                 FlatStyle = FlatStyle.Flat
