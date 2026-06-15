@@ -95,13 +95,13 @@ namespace PrintManager.Forms
                 AutoSize = true,
                 Padding = new Padding(8)
             };
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40));
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
 
-            txtNome  = new TextBox { Dock = DockStyle.Fill };
+            txtNome = new TextBox { Dock = DockStyle.Fill };
             txtSerie = new TextBox { Dock = DockStyle.Fill };
-            cboTipo  = new ComboBox
+            cboTipo = new ComboBox
             {
                 Dock = DockStyle.Fill,
                 DropDownStyle = ComboBoxStyle.DropDownList
@@ -109,8 +109,9 @@ namespace PrintManager.Forms
             cboTipo.Items.AddRange(new object[]
             {
                 "TSC",
-                "Zebra ZT410/ZT411",
-                "Zebra ZE511"
+                "ZT410",
+                "ZT411",
+                "ZE511"
             });
             cboTipo.SelectedIndex = 0;
 
@@ -140,8 +141,8 @@ namespace PrintManager.Forms
             panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
             panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
 
-            txtIP          = new TextBox { Dock = DockStyle.Fill, Font = new Font("Consolas", 9.5f) };
-            txtSetor       = new TextBox { Dock = DockStyle.Fill };
+            txtIP = new TextBox { Dock = DockStyle.Fill, Font = new Font("Consolas", 9.5f) };
+            txtSetor = new TextBox { Dock = DockStyle.Fill };
             txtLocalizacao = new TextBox { Dock = DockStyle.Fill };
 
             panel.Controls.Add(CriarCampo("Endereço IP", txtIP), 0, 0);
@@ -171,10 +172,10 @@ namespace PrintManager.Forms
             layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
 
             // Cria os 5 cards de peças
-            _cabeca   = CriarCardPeca(layout, "Cabeça de impressão",  0, 0, out chkCabeca);
-            _roletes  = CriarCardPeca(layout, "Roletes de pressão",   0, 1, out chkRoletes);
-            _recart   = CriarCardPeca(layout, "Recartilhado",         1, 0, out chkRecart);
-            _correias = CriarCardPeca(layout, "Correias",             1, 1, out chkCorreias);
+            _cabeca = CriarCardPeca(layout, "Cabeça de impressão", 0, 0, out chkCabeca);
+            _roletes = CriarCardPeca(layout, "Roletes de pressão", 0, 1, out chkRoletes);
+            _recart = CriarCardPeca(layout, "Recartilhado", 1, 0, out chkRecart);
+            _correias = CriarCardPeca(layout, "Correias", 1, 1, out chkCorreias);
 
             // Sensores ocupa linha inteira
             var rowSensores = layout.RowCount;
@@ -265,7 +266,7 @@ namespace PrintManager.Forms
             };
 
             txtDesc = new TextBox { Dock = DockStyle.Fill, PlaceholderText = "Descrição..." };
-            txtObs  = new TextBox { Dock = DockStyle.Fill, PlaceholderText = "Observações...", Multiline = true, Height = 42 };
+            txtObs = new TextBox { Dock = DockStyle.Fill, PlaceholderText = "Observações...", Multiline = true, Height = 42 };
 
             // Checkbox "Sem registro" desabilita o DateTimePicker
             var dtpLocal = dtp;
@@ -304,10 +305,12 @@ namespace PrintManager.Forms
             var btnCancelar = new Button
             {
                 Text = "Cancelar",
-                Width = 100, Height = 32,
+                Width = 100,
+                Height = 32,
                 FlatStyle = FlatStyle.Flat,
                 Anchor = AnchorStyles.Right | AnchorStyles.Top,
-                Left = 0, Top = 4
+                Left = 0,
+                Top = 4
             };
             btnCancelar.FlatAppearance.BorderColor = Color.Silver;
             btnCancelar.Click += (s, e) => Close();
@@ -315,12 +318,14 @@ namespace PrintManager.Forms
             var btnSalvar = new Button
             {
                 Text = "Salvar impressora",
-                Width = 150, Height = 32,
+                Width = 150,
+                Height = 32,
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.FromArgb(24, 95, 165),
                 ForeColor = Color.White,
                 Anchor = AnchorStyles.Right | AnchorStyles.Top,
-                Left = 108, Top = 4
+                Left = 108,
+                Top = 4
             };
             btnSalvar.FlatAppearance.BorderSize = 0;
             btnSalvar.Click += (s, e) => Salvar();
@@ -331,7 +336,7 @@ namespace PrintManager.Forms
             // Alinha à direita dinamicamente
             panel.Resize += (s, e) =>
             {
-                btnSalvar.Left  = panel.Width - btnSalvar.Width - 8;
+                btnSalvar.Left = panel.Width - btnSalvar.Width - 8;
                 btnCancelar.Left = btnSalvar.Left - btnCancelar.Width - 8;
             };
 
@@ -345,19 +350,19 @@ namespace PrintManager.Forms
         private void PreencherCampos()
         {
             // Identificação
-            txtNome.Text  = _impressora.Nome ?? "";
+            txtNome.Text = _impressora.Nome ?? "";
             txtSerie.Text = _impressora.NumeroSerie ?? "";
             cboTipo.SelectedIndex = (int)_impressora.Tipo;
 
             // Localização
-            txtIP.Text          = _impressora.EnderecoIP ?? "";
-            txtSetor.Text       = _impressora.Setor ?? "";
+            txtIP.Text = _impressora.EnderecoIP ?? "";
+            txtSetor.Text = _impressora.Setor ?? "";
             txtLocalizacao.Text = _impressora.Localizacao ?? "";
 
             // Peças
-            PreencherPeca(_cabeca,   chkCabeca,   _impressora.CabecaImpressao);
-            PreencherPeca(_roletes,  chkRoletes,  _impressora.RoletesPressao);
-            PreencherPeca(_recart,   chkRecart,   _impressora.Recartilhado);
+            PreencherPeca(_cabeca, chkCabeca, _impressora.CabecaImpressao);
+            PreencherPeca(_roletes, chkRoletes, _impressora.RoletesPressao);
+            PreencherPeca(_recart, chkRecart, _impressora.Recartilhado);
             PreencherPeca(_correias, chkCorreias, _impressora.Correias);
             PreencherPeca(_sensores, chkSensores, _impressora.SensoresMidia);
         }
@@ -370,18 +375,18 @@ namespace PrintManager.Forms
 
             if (peca.UltimaSubstituicao.HasValue)
             {
-                campos.Data.Value   = peca.UltimaSubstituicao.Value;
-                chk.Checked         = false;
+                campos.Data.Value = peca.UltimaSubstituicao.Value;
+                chk.Checked = false;
                 campos.Data.Enabled = true;
             }
             else
             {
-                chk.Checked         = true;
+                chk.Checked = true;
                 campos.Data.Enabled = false;
             }
 
             campos.Descricao.Text = peca.Descricao ?? "";
-            campos.Obs.Text       = peca.Observacoes ?? "";
+            campos.Obs.Text = peca.Observacoes ?? "";
         }
 
         private void Salvar()
@@ -396,19 +401,19 @@ namespace PrintManager.Forms
             }
 
             // Identificação
-            _impressora.Nome        = txtNome.Text.Trim();
+            _impressora.Nome = txtNome.Text.Trim();
             _impressora.NumeroSerie = txtSerie.Text.Trim();
-            _impressora.Tipo        = (TipoImpressora)cboTipo.SelectedIndex;
+            _impressora.Tipo = (TipoImpressora)cboTipo.SelectedIndex;
 
             // Localização
-            _impressora.EnderecoIP  = txtIP.Text.Trim();
-            _impressora.Setor       = txtSetor.Text.Trim();
+            _impressora.EnderecoIP = txtIP.Text.Trim();
+            _impressora.Setor = txtSetor.Text.Trim();
             _impressora.Localizacao = txtLocalizacao.Text.Trim();
 
             // Peças
-            ColetarPeca(_cabeca,   chkCabeca,   _impressora.CabecaImpressao);
-            ColetarPeca(_roletes,  chkRoletes,  _impressora.RoletesPressao);
-            ColetarPeca(_recart,   chkRecart,   _impressora.Recartilhado);
+            ColetarPeca(_cabeca, chkCabeca, _impressora.CabecaImpressao);
+            ColetarPeca(_roletes, chkRoletes, _impressora.RoletesPressao);
+            ColetarPeca(_recart, chkRecart, _impressora.Recartilhado);
             ColetarPeca(_correias, chkCorreias, _impressora.Correias);
             ColetarPeca(_sensores, chkSensores, _impressora.SensoresMidia);
 
@@ -427,8 +432,8 @@ namespace PrintManager.Forms
             CheckBox chk, Peca peca)
         {
             peca.UltimaSubstituicao = chk.Checked ? null : campos.Data.Value;
-            peca.Descricao          = campos.Descricao.Text.Trim();
-            peca.Observacoes        = campos.Obs.Text.Trim();
+            peca.Descricao = campos.Descricao.Text.Trim();
+            peca.Observacoes = campos.Obs.Text.Trim();
         }
 
         // ══════════════════════════════════════════════════════════════════════
@@ -453,7 +458,7 @@ namespace PrintManager.Forms
             var panel = new Panel
             {
                 Dock = DockStyle.Fill,
-                AutoSize = true,
+                AutoSize = false,
                 Padding = new Padding(4, 2, 4, 6)
             };
 
@@ -470,6 +475,11 @@ namespace PrintManager.Forms
             panel.Controls.Add(controle);
             panel.Controls.Add(lbl);
             return panel;
+        }
+
+        private void InitializeComponent()
+        {
+
         }
 
         private Panel CriarEspacador(int altura)

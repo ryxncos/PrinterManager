@@ -1,0 +1,43 @@
+[
+  {
+    "Id": "13c82d00-246c-4895-adea-86e6a2bcc4e5",
+    "Nome": "CROMO",
+    "EnderecoIP": "10.2.0.1",
+    "Setor": "SALA ETIQUETA",
+    "Tipo": 2,
+    "NumeroSerie": "XXX",
+    "Localizacao": "DESOSSA",
+    "DataCadastro": "2026-06-15T15:51:48.9223835-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T15:52:45.9702971-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  }
+]

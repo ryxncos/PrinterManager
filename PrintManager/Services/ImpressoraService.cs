@@ -21,9 +21,10 @@ namespace PrintManager.Services
 
         public List<Impressora> Filtrar(string busca)
         {
-            if (string.IsNullOrWhiteSpace(busca)) return _cache;
+            var lista = ListarTodas();
+            if (string.IsNullOrWhiteSpace(busca)) return lista;
             busca = busca.ToLower();
-            return _cache.Where(i =>
+            return lista.Where(i =>
                 (i.Nome?.ToLower().Contains(busca) ?? false) ||
                 (i.Setor?.ToLower().Contains(busca) ?? false) ||
                 (i.EnderecoIP?.Contains(busca) ?? false) ||
@@ -35,12 +36,13 @@ namespace PrintManager.Services
         {
             impressora.RegistrarModificacao();
             _repo.Salvar(impressora, _cache);
+            _cache = _repo.CarregarTodas();
         }
 
         public void Remover(Guid id) => _repo.Remover(id, _cache);
 
         public Impressora BuscarPorId(Guid id) =>
-            _cache.FirstOrDefault(i => i.Id == id);
+            ListarTodas().FirstOrDefault(i => i.Id == id);
 
         public Dictionary<string, (Impressora Impressora, Peca Peca)> ResumoMaisAntigas()
         {
@@ -51,12 +53,13 @@ namespace PrintManager.Services
                 "Recartilhado", "Correias", "Sensores de Midia"
             };
 
+            var lista = ListarTodas();
             foreach (var nome in nomes)
             {
                 Impressora piorImp = null;
                 Peca piorPeca = null;
 
-                foreach (var imp in _cache)
+                foreach (var imp in lista)
                 {
                     var peca = ObterPeca(imp, nome);
                     if (peca == null) continue;
