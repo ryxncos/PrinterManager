@@ -19,6 +19,8 @@ namespace PrintManager.Services
 
         public List<Impressora> ListarTodas() => _cache;
 
+        public void Recarregar() => _cache = _repo.CarregarTodas();
+
         public List<Impressora> Filtrar(string busca)
         {
             var lista = ListarTodas();

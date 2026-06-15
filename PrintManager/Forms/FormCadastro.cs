@@ -168,8 +168,8 @@ namespace PrintManager.Forms
                 AutoSize = true,
                 Padding = new Padding(8, 4, 8, 8)
             };
-            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
 
             // Cria os 5 cards de peças
             _cabeca = CriarCardPeca(layout, "Cabeça de impressão", 0, 0, out chkCabeca);

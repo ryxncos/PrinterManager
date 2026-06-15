@@ -2,13 +2,259 @@
   {
     "Id": "13c82d00-246c-4895-adea-86e6a2bcc4e5",
     "Nome": "CROMO",
-    "EnderecoIP": "10.2.0.1",
+    "EnderecoIP": "192.168.100.1",
     "Setor": "SALA ETIQUETA",
     "Tipo": 2,
     "NumeroSerie": "XXX",
     "Localizacao": "DESOSSA",
     "DataCadastro": "2026-06-15T15:51:48.9223835-03:00",
-    "UltimaModificacaoGeral": "2026-06-15T15:52:45.9702971-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:22:06.114732-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "FEITO A TROCA",
+      "UltimaSubstituicao": "2026-06-15T00:00:00-03:00",
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "TESTE",
+      "UltimaSubstituicao": "2026-06-15T00:00:00-03:00",
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "5d10a67b-bf3a-46bd-ab45-3fee2d5feebd",
+    "Nome": "AUTOMATICA 1",
+    "EnderecoIP": "10.254.116.111",
+    "Setor": "SECUNDARIA",
+    "Tipo": 3,
+    "NumeroSerie": "XXX",
+    "Localizacao": "DESOSSA",
+    "DataCadastro": "2026-06-15T18:22:22.5942047-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:35:03.8119556-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "TROCA COMPLETA",
+      "UltimaSubstituicao": "2026-06-06T00:00:00",
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "6683bf01-35c6-46b0-ac92-8fbb78200473",
+    "Nome": "AAAA",
+    "EnderecoIP": "192.168.100.1",
+    "Setor": "DESOSSA",
+    "Tipo": 3,
+    "NumeroSerie": "XXX",
+    "Localizacao": "DESOSSA",
+    "DataCadastro": "2026-06-15T18:23:01.4200841-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:23:21.1601394-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "899e48f7-92fa-4a77-be7e-a69cacd4e88b",
+    "Nome": "teste",
+    "EnderecoIP": "",
+    "Setor": "",
+    "Tipo": 0,
+    "NumeroSerie": "teste",
+    "Localizacao": "",
+    "DataCadastro": "2026-06-15T18:40:34.5193558-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:40:42.658517-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "2a417b6b-dd90-4be5-89e8-a28a5c067393",
+    "Nome": ".",
+    "EnderecoIP": "",
+    "Setor": "",
+    "Tipo": 0,
+    "NumeroSerie": "",
+    "Localizacao": "",
+    "DataCadastro": "2026-06-15T18:47:58.6564165-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:48:03.9870408-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "fdad5147-559b-4b28-a0e5-b389a3a7db69",
+    "Nome": ".",
+    "EnderecoIP": "",
+    "Setor": "",
+    "Tipo": 0,
+    "NumeroSerie": "",
+    "Localizacao": "",
+    "DataCadastro": "2026-06-15T18:53:13.7807928-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T18:53:19.1455768-03:00",
+    "CabecaImpressao": {
+      "Nome": "Cabeca de Impressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "RoletesPressao": {
+      "Nome": "Roletes de Pressao",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Recartilhado": {
+      "Nome": "Recartilhado",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "Correias": {
+      "Nome": "Correias",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    },
+    "SensoresMidia": {
+      "Nome": "Sensores de Midia",
+      "Descricao": "",
+      "UltimaSubstituicao": null,
+      "Observacoes": ""
+    }
+  },
+  {
+    "Id": "2ae657ae-409f-4ac1-be96-fd43109fb6f0",
+    "Nome": "ult teste",
+    "EnderecoIP": "",
+    "Setor": "",
+    "Tipo": 0,
+    "NumeroSerie": "",
+    "Localizacao": "",
+    "DataCadastro": "2026-06-15T19:25:22.7090672-03:00",
+    "UltimaModificacaoGeral": "2026-06-15T19:25:32.3197658-03:00",
     "CabecaImpressao": {
       "Nome": "Cabeca de Impressao",
       "Descricao": "",

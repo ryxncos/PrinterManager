@@ -17,6 +17,7 @@ namespace PrintManager.Forms
         // Controles da toolbar
         private TextBox txtBusca;
         private Button btnNova;
+        private Button btnRefresh;
         private Button btnPingTodos;
 
         // Grade principal
@@ -46,8 +47,10 @@ namespace PrintManager.Forms
             // --- Toolbar ---
             var toolbar = new Panel
             {
+                Width = 900,
+                Size = new Size(Width, 60),
                 Dock = DockStyle.Top,
-                Height = 48,
+                Height = 60,
                 Padding = new Padding(8, 8, 8, 0),
                 BackColor = SystemColors.Control
             };
@@ -56,7 +59,7 @@ namespace PrintManager.Forms
             {
                 PlaceholderText = "Buscar por nome, setor, IP ou tipo...",
                 Width = 320,
-                Height = 28,
+                Height = 30,
                 Left = 8,
                 Top = 10,
                 Font = new Font("Segoe UI", 9.5f)
@@ -67,7 +70,7 @@ namespace PrintManager.Forms
             {
                 Text = "⟳  Ping todos",
                 Width = 110,
-                Height = 28,
+                Height = 30,
                 Left = txtBusca.Right + 8,
                 Top = 10,
                 FlatStyle = FlatStyle.Flat
@@ -75,12 +78,24 @@ namespace PrintManager.Forms
             btnPingTodos.FlatAppearance.BorderColor = Color.Silver;
             btnPingTodos.Click += async (s, e) => await PingTodosAsync();
 
+            btnRefresh = new Button
+            {
+                Text = "⟳  Atualizar",
+                Width = 200,
+                Height = 30,
+                Left = btnPingTodos.Right + 8,
+                Top = 10,
+                FlatStyle = FlatStyle.Flat
+            };
+            btnRefresh.FlatAppearance.BorderColor = Color.Silver;
+            btnRefresh.Click += (s, e) => CarregarDados();
+
             btnNova = new Button
             {
                 Text = "+  Nova impressora",
-                Width = 140,
-                Height = 28,
-                Left = btnPingTodos.Right + 8,
+                Width = 200,
+                Height = 30,
+                Left = btnRefresh.Right + 8,
                 Top = 10,
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.FromArgb(24, 95, 165),
@@ -89,7 +104,7 @@ namespace PrintManager.Forms
             btnNova.FlatAppearance.BorderSize = 0;
             btnNova.Click += (s, e) => AbrirFormCadastro(null);
 
-            toolbar.Controls.AddRange(new Control[] { txtBusca, btnPingTodos, btnNova });
+            toolbar.Controls.AddRange(new Control[] { txtBusca, btnPingTodos, btnRefresh, btnNova });
 
             // --- DataGridView ---
             grid = new DataGridView
@@ -139,6 +154,7 @@ namespace PrintManager.Forms
         private void ConfigurarColunas()
         {
             grid.Columns.Add(new DataGridViewTextBoxColumn
+            
             {
                 Name = "colStatus",
                 HeaderText = "Status",
@@ -159,6 +175,7 @@ namespace PrintManager.Forms
                 Name = "colTipo",
                 HeaderText = "Tipo",
                 Width = 140,
+                
                 ReadOnly = true
             });
 
@@ -248,7 +265,8 @@ namespace PrintManager.Forms
 
         private void CarregarDados()
         {
-            AtualizarGrid(_service.ListarTodas());
+            _service.Recarregar();
+            AtualizarGrid(_service.Filtrar(txtBusca.Text));
         }
 
         private void AtualizarGrid(List<Impressora> lista)
